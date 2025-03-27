@@ -1,9 +1,6 @@
 from flask import Flask, request, jsonify
 
 
-@Todo.route('/favicon.ico')
-def favicon():
-    return send_from_directory('static', 'favicon.ico')
 
 Todo = Flask(__name__)
 
@@ -36,6 +33,11 @@ def get_students_by_id(id):
                   return jsonify(student)
       return jsonify('student not found')
       
+
+@Todo.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico')
+
 
 if __name__ == '__main__':
         Todo.run(debug=True)
