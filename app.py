@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 
 
-@app.route('/favicon.ico')
+@Todo.route('/favicon.ico')
 def favicon():
     return send_from_directory('static', 'favicon.ico')
 
