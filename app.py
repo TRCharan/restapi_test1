@@ -33,10 +33,13 @@ def get_students_by_id(id):
                   return jsonify(student)
       return jsonify('student not found')
       
+from flask import Flask, send_from_directory
+
+app = Flask(__name__)
 
 @Todo.route('/favicon.ico')
 def favicon():
-    return send_from_directory('static', 'favicon.ico')
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
